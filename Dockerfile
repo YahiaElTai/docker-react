@@ -1,9 +1,9 @@
 FROM node:alpine as builder
 WORKDIR '/app'
 COPY package.json .
-RUN npm install
+RUN yarn
 COPY . .
-RUN npm run build
+RUN yarn run build
 
 FROM nginx
 EXPOSE 80
