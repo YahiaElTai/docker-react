@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker image build -t yahiaeltai/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run yahiaeltai/docker-react yarn run test -- --coverage
